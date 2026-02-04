@@ -3,6 +3,11 @@ Library    SeleniumLibrary
 
 *** Test Cases ***
 Open KKU Website
-    Open Browser    https://computing.kku.ac.th    chrome    options=--headless --no-sandbox --disable-dev-shm-usage
+    ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
+    Call Method    ${options}    add_argument    --headless
+    Call Method    ${options}    add_argument    --no-sandbox
+    Call Method    ${options}    add_argument    --disable-dev-shm-usage
+
+    Open Browser    https://computing.kku.ac.th    chrome    options=${options}
     Sleep    3
     Close Browser
