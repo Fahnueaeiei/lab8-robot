@@ -13,4 +13,4 @@ Open Browser To Login Page
 
 *** Test Cases ***
 Open KKU Website Test
-   open browser to login page
+    Open Browser To Login Page
